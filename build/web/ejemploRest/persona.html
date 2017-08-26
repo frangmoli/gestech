@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contacto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div>Contacto</div>
+        <section id="panelFiltro">
+            <form action="" method="GET">
+                <input type="text" name="persona_nombre" id="persona_nombre" maxlength="200" />
+                <input type="email" name="persona_email" id="persona_email" maxlength="200" />
+                <input class="btn btn-primary" id="btnInsertar" value="Insertar" />
+                <input class="btn btn-info" id="btnConsultar" value="Consultar" />
+                <!-- input type="button" id="btnShutdown" value="Shutdown" / -->
+            </form>
+        </section>
+        <section id="panelResultados">
+
+        </section>
+
+        <script type="text/template" id="templatePersonasES6">
+`
+<table>
+    ${personas.map( persona =>
+              `
+              <tr class='persona_item'>
+                  <td>${persona.id}</td>
+                  <td>${persona.nombre}</td>
+                  <td>${persona.email}</td>
+              </tr>
+              `
+    ).join('')
+    }
+</table>
+`;
+        </script>
+
+        <script src="js/mustache.js"></script>
+        <script src="js/persona.js"></script>
+    </body>
+</html>

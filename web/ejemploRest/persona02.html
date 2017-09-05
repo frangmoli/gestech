@@ -8,17 +8,55 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
-        <div>Contacto</div>
+        <div class="container">
+            <div>
+            <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-brand">GESTECH</div>
+                  <ul class="nav navbar-nav">
+                  <li><a href="home.php">Inicio</a></li>    
+                  <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                  <li><a href="index.php">Lista de clientes</a></li>
+                  <li><a href="nuevo_cliente.php">Crear nuevo cliente</a></li>
+                  </ul>
+                  <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipos
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                  <li><a href="index_equipos.php">Lista de Equipos</a></li>
+                  <li><a href="nuevo_equipo.php">Cargar nuevo Equipo</a></li>
+                  </ul>  
+                  </li> 
+                  
+                  </ul>
+            </div>
+                </nav>
+            </div>
         <section id="panelFiltro">
-            <form action="" method="GET">
-                <input type="text" name="persona_nombre" id="persona_nombre" maxlength="200" />
-                <input type="email" name="persona_email" id="persona_email" maxlength="200" />
+            <form class="form container" action="" method="GET">
+                <div class="form group">
+                <div>
+                <input class="form-control" type="text" name="persona_nombre" id="persona_nombre" placeholder="Nombre" maxlength="200" />
+                <input class="form-control" type="text" name="persona_apellido" id="persona_apellido" placeholder="Apellido" maxlength="200" />
+                <br> 
+                <input class="form-control" type="text" name="persona_dni" id="persona_dni" placeholder="DNI" maxlength="200" />
+                <input class="form-control" type="text" name="persona_telefono" id="persona_telefono" placeholder="Telefono" maxlength="200" />
+                  <br> 
+                <input class="form-control" type="email" name="persona_email" id="persona_email"  placeholder="Email" maxlength="200" />
+                <input class="form-control" type="text" name="persona_dire" id="persona_dire" placeholder="Direccion" maxlength="200" />
+              <br> 
                 <input class="btn btn-primary" id="btnInsertar" value="Insertar" />
-                <input class="btn btn-danger" id="btnEliminar" value="Eliminar" />
-                <input class="btn btn-warning" id="btnActualizar" value="Actualizar" />
+                <input class="btn btn-danger" id="btnEliminar" value="Eliminar" style="visibility: hidden" />
+                <input class="btn btn-warning" id="btnActualizar" value="Actualizar" style="visibility: hidden" />
                 <input class="btn btn-info" id="btnConsultar" value="Consultar" />
+                </div>
+                </div>
             </form>
         </section>
+            <br>
         <section id="panelResultados">
 
         </section>
@@ -67,8 +105,10 @@
               </tr>
             {{/listaPersonas}}
             </table>
+            
         </script>
         <script src="js/mustache.js"></script>
         <script src="js/persona02.js"></script>
+        </div>
     </body>
 </html>

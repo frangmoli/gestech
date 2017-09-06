@@ -1,11 +1,10 @@
-<!DOCTYPE html>
 <html>
     <head>
-        <title>Contacto</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--<link href="css/estilo.css" rel="stylesheet" />-->
+        <title>GESTECH</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -14,13 +13,13 @@
             <div class="container-fluid">
                 <div class="navbar-brand">GESTECH</div>
                   <ul class="nav navbar-nav">
-                  <li><a href="home.php">Inicio</a></li>    
+                  <li><a href="/java_crud/index.html">Inicio</a></li>    
                   <li class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes
                   <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                  <li><a href="index.php">Lista de clientes</a></li>
-                  <li><a href="nuevo_cliente.php">Crear nuevo cliente</a></li>
+                
+                  <li><a href="persona02.html">Crear nuevo cliente</a></li>
                   </ul>
                   <li class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipos
@@ -29,12 +28,13 @@
                   <li><a href="index_equipos.php">Lista de Equipos</a></li>
                   <li><a href="nuevo_equipo.php">Cargar nuevo Equipo</a></li>
                   </ul>  
-                  </li> 
+                  </li>
                   
                   </ul>
             </div>
                 </nav>
             </div>
+        </div>
         <section id="panelFiltro">
             <form class="form container" action="" method="GET">
                 <div class="form group">
@@ -51,7 +51,7 @@
                 <input class="btn btn-primary" id="btnInsertar" value="Insertar" />
                 <input class="btn btn-danger" id="btnEliminar" value="Eliminar" style="visibility: hidden" />
                 <input class="btn btn-warning" id="btnActualizar" value="Actualizar" style="visibility: hidden" />
-                <input class="btn btn-info" id="btnConsultar" value="Consultar" />
+                <input class="btn btn-info" id="btnConsultar" value="Consultar listado clientes" />
                 </div>
                 </div>
             </form>
@@ -76,14 +76,14 @@
     `
               <tr class='persona_item'>
                   <td>${persona.id}</td>
-                  <td><input type='text' value='${persona.nombre}' id='persona_nombre_${persona.id}' /></td>
-                  <td><input type='text' value='${persona.apellido}' id='persona_apellido_${persona.id}' /></td>
-                  <td><input type='text' value='${persona.dni}' id='persona_dni_${persona.id}' /></td>
-                  <td><input type='text' value='${persona.telefono}' id='persona_telefono_${persona.id}' /></td>
-                  <td><input type='email' value='${persona.email}' id='persona_email_${persona.id}' /></td>
-                  <td><input type='text' value='${persona.direccion}' id='persona_direccion_${persona.id}' /></td>
-                  <td><input class='btn btn-warning' value='Modificar  ${persona.id}' onclick='PERSONA.actualizar(${persona.id});' />
-                  <input class='btn btn-danger' value='Eliminar  ${persona.id}' onclick='PERSONA.eliminar(${persona.id});' /></td>
+                  <td><input class="form-control" type='text' value='${persona.nombre}' id='persona_nombre_${persona.id}' /></td>
+                  <td><input class="form-control" type='text' value='${persona.apellido}' id='persona_apellido_${persona.id}' /></td>
+                  <td><input class="form-control" type='text' value='${persona.dni}' id='persona_dni_${persona.id}' /></td>
+                  <td><input class="form-control" type='text' value='${persona.telefono}' id='persona_telefono_${persona.id}' /></td>
+                  <td><input class="form-control" type='email' value='${persona.email}' id='persona_email_${persona.id}' /></td>
+                  <td><input class="form-control" type='text' value='${persona.direccion}' id='persona_direccion_${persona.id}' /></td>
+                  <td><input class='btn btn-warning' value='Modificar datos  ${persona.id}' onclick='PERSONA.actualizar(${persona.id});' />
+                  <input class='btn btn-danger' value='Eliminar cliente ${persona.id}' onclick='PERSONA.eliminar(${persona.id});' /></td>
               </tr>
     `
         ).join('')
@@ -109,6 +109,6 @@
         </script>
         <script src="js/mustache.js"></script>
         <script src="js/persona02.js"></script>
-        </div>
+       
     </body>
 </html>

@@ -12,6 +12,7 @@ PERSONA.insertar = function(){
     // objeto para enviar los parametros del formulario
     var persona = {};
     persona.nombre = document.querySelector("#persona_nombre").value;
+    persona.apellido = document.querySelector("#persona_apellido").value;
     persona.email = document.querySelector("#persona_email").value;
     // formato del mensaje en JSON
     var personaStringJSON = JSON.stringify(persona);
@@ -30,6 +31,7 @@ PERSONA.actualizar = function(paramId){
     var persona = {};
     persona.id = paramId;
     persona.nombre = document.querySelector("#persona_nombre_"+paramId).value;
+    persona.apellido = document.querySelector("#persona_apellido_"+paramId).value;
     persona.email = document.querySelector("#persona_email_"+paramId).value;
     // formato del mensaje en JSON
     var personaStringJSON = JSON.stringify(persona);
@@ -41,6 +43,7 @@ PERSONA.eliminar = function(paramId){
     var persona = {};
     persona.id = paramId;
     persona.nombre = document.querySelector("#persona_nombre_"+paramId).value;
+    persona.apellido = document.querySelector("#persona_apellido_"+paramId).value;
     persona.email = document.querySelector("#persona_email_"+paramId).value;
     // formato del mensaje en JSON
     var personaStringJSON = JSON.stringify(persona);
@@ -71,6 +74,7 @@ PERSONA.consultar = function(){
     // objeto para enviar los parametros del formulario
     var persona = {};
     persona.nombre = document.querySelector("#persona_nombre").value;
+    persona.apellido = document.querySelector("#persona_apellido").value;
     persona.email = document.querySelector("#persona_email").value;
     // formato del mensaje en JSON
     var personaStringJSON = JSON.stringify(persona);

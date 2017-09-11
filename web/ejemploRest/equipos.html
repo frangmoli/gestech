@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>GESTECH</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div>
+            <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-brand">GESTECH</div>
+                  <ul class="nav navbar-nav">
+                  <li><a href="/java_crud/index.html">Inicio</a></li>    
+                  <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                
+                  <li><a href="persona02.html">Crear nuevo cliente</a></li>
+                  <li><a href="listaclientes.html">Consultar listado de clientes</a></li>
+                  </ul>
+                  <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipos
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                  <li><a href="equipos.html">Lista de Equipos</a></li>
+                  <li><a>Consultar listado</a></li>
+                  </ul>  
+                  </li>
+                  
+                  </ul>
+            </div>
+                </nav>
+            </div>
+        </div>
+        <div>
+         <form class="form container" method="post" action="guardar_equipos.php">
+                <div class="form-group">
+                <input class="form-control" type="text" name="equipo_fecha_rec" placeholder="Ingrese la fecha de recepción">
+                </div>
+                <div class="form-group">
+                <input class="form-control" type="text" name="equipo_cliente" placeholder="Seleccione al propietario">
+                </div>
+                <div class="form-group">
+                <input class="form-control" type="text" name="equipo_marca" placeholder="Ingrese marca">
+                </div>
+                <div class="form-group">
+                <input class="form-control" type="text" name="equipo_modelo" placeholder="Ingrese modelo">
+                </div>
+                <div class="form-group">
+                <input class="form-control" type="text" name="equipo_serie" placeholder="Ingrese número de serie">
+                </div>
+                 <div class="form-group">
+                <input class="form-control" type="text" name="equipo_observ" placeholder="Observaciones">
+                </div>
+                <div class="form-group">
+                <input class="form-control" type="text" name="equipo_diag_int" placeholder="Diagnóstico interno">
+                </div>
+                 <div class="form-group">
+                <input class="form-control" type="text" name="equipo_diag_cliente" placeholder="Diagnóstico para cliente">
+                </div>
+                 <div class="form-group">
+                <input class="form-control" type="text" name="equipo_presup" placeholder="Ingrese el monto presupuestado">
+                </div>
+                 <div class="checkbox">
+                <label>¿Aprueba el presupuesto?</label>     
+                <label><input type="radio" name="aprob" value="Si">Si</label>
+                <label><input type="radio" name="aprob" value="No">No</label>
+                </div>
+                 <div class="form-group">
+                <input class="form-control" type="text" name="equipo_fecha_aprob" placeholder="Fecha de aprobación">
+                </div>
+                 <div class="checkbox">
+                <label>Estado del Equipo:</label>     
+                <label><input type="radio" name="estado" value="En reparación">En reparación</label>
+                <label><input type="radio" name="estado" value="Reparado">Reparado</label>
+                <label><input type="radio" name="estado" value="Entregado">Entregado</label>
+                </div>
+                <div class="form-group">
+                <input class="form-control" type="text" name="equipo_fecha_ent" placeholder="Fecha de entrega">
+                </div>
+                
+                <button class="btn btn-success">Guardar</button>
+                
+            </form>
+        </div>
+        
+        <?php
+      
+        ?>
+    </body>
+</html>

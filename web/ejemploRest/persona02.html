@@ -20,13 +20,14 @@
                   <ul class="dropdown-menu">
                 
                   <li><a href="persona02.html">Crear nuevo cliente</a></li>
+                  <li><a id="btnConsultar">Consultar listado</a></li>
                   </ul>
                   <li class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipos
                   <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                   <li><a href="index_equipos.php">Lista de Equipos</a></li>
-                  <li><a href="nuevo_equipo.php">Cargar nuevo Equipo</a></li>
+                  <li><a id="btnConsultar">Consultar listado</a></li>
                   </ul>  
                   </li>
                   
@@ -37,21 +38,21 @@
         </div>
         <section id="panelFiltro">
             <form class="form container" action="" method="GET">
-                <div class="form group">
+                <div id="formulario" class="form group">
                 <div>
                 <input class="form-control" type="text" name="persona_nombre" id="persona_nombre" placeholder="Nombre" maxlength="200" />
                 <input class="form-control" type="text" name="persona_apellido" id="persona_apellido" placeholder="Apellido" maxlength="200" />
                 <br> 
-               <!-- <input class="form-control" type="text" name="persona_dni" id="persona_dni" placeholder="DNI" maxlength="200" />
-                <input class="form-control" type="text" name="persona_telefono" id="persona_telefono" placeholder="Telefono" maxlength="200" />-->
+               <input class="form-control" type="text" name="persona_dni" id="persona_dni" placeholder="DNI" maxlength="40" />
+                <input class="form-control" type="text" name="persona_telefono" id="persona_telefono" placeholder="Telefono" maxlength="200" />
                   <br> 
                 <input class="form-control" type="email" name="persona_email" id="persona_email"  placeholder="Email" maxlength="200" />
-                <!--<input class="form-control" type="text" name="persona_dire" id="persona_dire" placeholder="Direccion" maxlength="200" />-->
+                <input class="form-control" type="text" name="persona_direccion" id="persona_direccion" placeholder="Direccion" maxlength="200" />
               <br> 
                 <input class="btn btn-primary" id="btnInsertar" value="Insertar" />
                 <input class="btn btn-danger" id="btnEliminar" value="Eliminar" style="visibility: hidden" />
                 <input class="btn btn-warning" id="btnActualizar" value="Actualizar" style="visibility: hidden" />
-                <input class="btn btn-info" id="btnConsultar" value="Consultar listado clientes" />
+                <input class="btn btn-info" id="btnConsultar" value="Consultar listado clientes" style="visibility: hidden" />
                 </div>
                 </div>
             </form>
@@ -62,15 +63,17 @@
         </section>
 
         <script type="text/template" id="templatePersonasES6">
+            
+            
 `
     <table border = 1 class='table'>
              <th>ID</th>
               <th>Nombre</th>
               <th>Apellido</th>
-             <!-- <th>DNI</th>
-              <th>Telefono</th>-->
+              <th>DNI</th>
+              <th>Telefono</th>
               <th>Email</th>
-              <!--<th>Direccion</th>-->
+             <th>Direccion</th>
               <th>Acciones</th>
     ${ personas.map( persona => 
     `
@@ -78,12 +81,12 @@
                   <td>${persona.id}</td>
                   <td><input class="form-control" type='text' value='${persona.nombre}' id='persona_nombre_${persona.id}' /></td>
                   <td><input class="form-control" type='text' value='${persona.apellido}' id='persona_apellido_${persona.id}' /></td>
-                  <!--<td><input class="form-control" type='text' value='${persona.dni}' id='persona_dni_${persona.id}' /></td>
-                  <td><input class="form-control" type='text' value='${persona.telefono}' id='persona_telefono_${persona.id}' /></td>-->
+                  <td><input class="form-control" type='text' value='${persona.dni}' id='persona_dni_${persona.id}' /></td>
+                  <td><input class="form-control" type='text' value='${persona.telefono}' id='persona_telefono_${persona.id}' /></td>
                   <td><input class="form-control" type='email' value='${persona.email}' id='persona_email_${persona.id}' /></td>
-                  <!-- <td><input class="form-control" type='text' value='${persona.direccion}' id='persona_direccion_${persona.id}' /></td>-->
+                  <td><input class="form-control" type='text' value='${persona.direccion}' id='persona_direccion_${persona.id}' /></td>
                   <td><input class='btn btn-warning' value='Modificar datos  ${persona.id}' onclick='PERSONA.actualizar(${persona.id});' />
-                  <input class='btn btn-danger' value='Eliminar cliente ${persona.id}' onclick='PERSONA.eliminar(${persona.id});' /></td>
+                  <input class='btn btn-danger' value='Eliminar cliente ${persona.id}' onclick='PERSONA.eliminar(${persona.id});'/></td>
               </tr>
     `
         ).join('')
@@ -92,7 +95,7 @@
 `            
         </script>
         
-        <script type="text/template" id="templatePersonas">
+       <!-- <script type="text/template" id="templatePersonas">
             <table>
             <tr><th>Nombre</th><th>Apellido</th><th>Email</th><th>ID</th></tr>
             {{#listaPersonas}}
@@ -107,7 +110,7 @@
             {{/listaPersonas}}
             </table>
             
-        </script>
+        </script> -->
         <script src="js/mustache.js"></script>
         <script src="js/persona02.js"></script>
        

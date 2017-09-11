@@ -13,7 +13,10 @@ PERSONA.insertar = function(){
     var persona = {};
     persona.nombre = document.querySelector("#persona_nombre").value;
     persona.apellido = document.querySelector("#persona_apellido").value;
+    persona.dni = document.querySelector("#persona_dni").value;
+    persona.telefono = document.querySelector("#persona_telefono").value;
     persona.email = document.querySelector("#persona_email").value;
+    persona.direccion = document.querySelector("#persona_direccion").value;
     // formato del mensaje en JSON
     var personaStringJSON = JSON.stringify(persona);
     xhr.send(  personaStringJSON );
@@ -32,7 +35,10 @@ PERSONA.actualizar = function(paramId){
     persona.id = paramId;
     persona.nombre = document.querySelector("#persona_nombre_"+paramId).value;
     persona.apellido = document.querySelector("#persona_apellido_"+paramId).value;
+    persona.dni = document.querySelector("#persona_dni_"+paramId).value;
+    persona.telefono = document.querySelector("#persona_telefono_"+paramId).value;
     persona.email = document.querySelector("#persona_email_"+paramId).value;
+    persona.direccion = document.querySelector("#persona_direccion_"+paramId).value;
     // formato del mensaje en JSON
     var personaStringJSON = JSON.stringify(persona);
     xhr.send( personaStringJSON );
@@ -44,7 +50,10 @@ PERSONA.eliminar = function(paramId){
     persona.id = paramId;
     persona.nombre = document.querySelector("#persona_nombre_"+paramId).value;
     persona.apellido = document.querySelector("#persona_apellido_"+paramId).value;
+    persona.dni = document.querySelector("#persona_dni_"+paramId).value;
+    persona.telefono = document.querySelector("#persona_telefono_"+paramId).value;
     persona.email = document.querySelector("#persona_email_"+paramId).value;
+    persona.direccion = document.querySelector("#persona_direccion_"+paramId).value;
     // formato del mensaje en JSON
     var personaStringJSON = JSON.stringify(persona);
 
@@ -75,7 +84,11 @@ PERSONA.consultar = function(){
     var persona = {};
     persona.nombre = document.querySelector("#persona_nombre").value;
     persona.apellido = document.querySelector("#persona_apellido").value;
+    persona.dni = document.querySelector("#persona_dni").value;
+    persona.telefono = document.querySelector("#persona_telefono").value;
     persona.email = document.querySelector("#persona_email").value;
+    persona.direccion = document.querySelector("#persona_direccion").value;
+    
     // formato del mensaje en JSON
     var personaStringJSON = JSON.stringify(persona);
     xhr.send( personaStringJSON );

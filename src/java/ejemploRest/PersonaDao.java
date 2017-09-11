@@ -37,10 +37,10 @@ public class PersonaDao {
                     a.setId(rs.getString("per_id"));
                     a.setNombre(rs.getString("per_nombre"));
                     a.setApellido(rs.getString("per_apellido"));
+                    a.setDni(rs.getString("per_dni"));
+                    a.setDireccion(rs.getString("per_direccion"));
                     a.setEmail(rs.getString("per_email"));
-                   // a.setDni(rs.getString("per_dni"));
-                   // a.setDireccion(rs.getString("per_direccion"));
-                   // a.setTelefono(rs.getString("per_telefono"));
+                    a.setTelefono(rs.getString("per_telefono"));
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
@@ -60,7 +60,7 @@ public class PersonaDao {
         return lista;
     }
     private final static String SQL_PERSONAS_INSERT = "INSERT INTO personas (per_nombre,"
-            + "per_apellido," + " per_email)values(?,?,?);";
+            + "per_apellido," + "per_dni," + "per_telefono," + " per_email,"+ " per_direccion)values(?,?,?,?,?,?);";
 
     public static void insertar(Persona a)
             throws ClassNotFoundException,
@@ -72,7 +72,10 @@ public class PersonaDao {
             ptsmt = c.prepareStatement(SQL_PERSONAS_INSERT);
             ptsmt.setString(1, a.getNombre());
             ptsmt.setString(2, a.getApellido());
-            ptsmt.setString(3, a.getEmail());
+            ptsmt.setString(3, a.getDni());
+            ptsmt.setString(4, a.getTelefono());
+            ptsmt.setString(5, a.getEmail());
+            ptsmt.setString(6, a.getDireccion());
             ptsmt.execute();
         } finally {
             try {
@@ -83,7 +86,7 @@ public class PersonaDao {
         }
     }
     private final static String SQL_PERSONAS_UPDATE = "UPDATE personas "
-            + " set per_nombre = ?, per_apellido = ?, per_email = ? "
+            + " set per_nombre = ?, per_apellido = ?, per_dni = ?, per_telefono = ?, per_email = ?, per_direccion = ? "
             + " WHERE per_id = ?;";
 
     public static void actualizar(Persona a) throws ClassNotFoundException,
@@ -93,10 +96,13 @@ public class PersonaDao {
         try {
             c = DB.getInstance().getConnection();
             ptsmt = c.prepareStatement(SQL_PERSONAS_UPDATE);
-            ptsmt.setString(1, a.getNombre());
+             ptsmt.setString(1, a.getNombre());
             ptsmt.setString(2, a.getApellido());
-            ptsmt.setString(3, a.getEmail());
-            ptsmt.setInt(4, Integer.parseInt(a.getId()));
+            ptsmt.setString(3, a.getDni());
+            ptsmt.setString(4, a.getTelefono());
+            ptsmt.setString(5, a.getEmail());
+            ptsmt.setString(6, a.getDireccion());
+            ptsmt.setInt(7, Integer.parseInt(a.getId()));
             ptsmt.execute();
         } finally {
             try {
@@ -127,30 +133,6 @@ public class PersonaDao {
         }
     }
     
-    
-    
-//////////////////////////////////////
-       public static void main(String[] args) {
-        System.out.println("[ .. ]TestPersonaDao");
-        try {
-            ArrayList<Persona> personas = PersonaDao.getInstance().obtener();
-            for (Persona a : personas) {
-                System.out.println(a);
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        try {
-            Persona a = new Persona();
-            a.setNombre("Enzo");
-            a.setApellido("Perez");
-            a.setEmail("Enzo@gmail.com");
-            PersonaDao.insertar(a);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        System.out.println("[ OK ]TestPersonaDao");
-    }
     
    
 }

@@ -5,10 +5,10 @@ public class Persona {
     private String id;
     private String nombre;
     private String apellido;
-    //private String dni;
-    //private String telefono;
+    private String dni;
+    private String telefono;
     private String email;
-    //private String direccion;
+    private String direccion;
 
     public String getId() {
         return id;
@@ -32,7 +32,20 @@ public class Persona {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-    
+     public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+     public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
     public String getEmail() {
         return email;
     }
@@ -45,10 +58,17 @@ public class Persona {
         }
 
     }
+     public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
 
     @Override
     public String toString() {
-        return "Persona: " + nombre + apellido + " : " + email;
+        return "Persona: " + nombre + apellido + dni + telefono +" : " + email + direccion;
     }
     
     public void validar() throws Exception{

@@ -34,9 +34,9 @@ public class EquipoDao {
             while (rs.next()) {
                 try {
                     a = new Equipo();
-                    a.setId(rs.getString("eq_id"));
-                    a.setModelo(rs.getString("eq_modelo"));
-                    a.setSerial(rs.getString("eq_serial"));
+                    a.setId(rs.getString("equipo_id"));
+                    a.setModelo(rs.getString("equipo_modelo"));
+                    a.setSerie(rs.getString("equipo_serie"));
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
@@ -55,8 +55,8 @@ public class EquipoDao {
         }
         return lista;
     }
-    private final static String SQL_EQUIPOS_INSERT = "INSERT INTO equipos (eq_modelo,"
-            + "eq_serial)values(?,?);";
+    private final static String SQL_EQUIPOS_INSERT = "INSERT INTO equipos (equipo_modelo,"
+            + "equipo_serie)values(?,?);";
 
     public static void insertar(Equipo a)
             throws ClassNotFoundException,
@@ -67,7 +67,7 @@ public class EquipoDao {
             c = DB.getInstance().getConnection();
             ptsmt = c.prepareStatement(SQL_EQUIPOS_INSERT);
             ptsmt.setString(1, a.getModelo());
-            ptsmt.setString(2, a.getSerial());
+            ptsmt.setString(2, a.getSerie());
             ptsmt.execute();
         } finally {
             try {
@@ -78,8 +78,8 @@ public class EquipoDao {
         }
     }
     private final static String SQL_EQUIPOS_UPDATE = "UPDATE equipos "
-            + " set eq_modelo = ?, eq_serial = ?"
-            + " WHERE eq_id = ?;";
+            + " set equipo_modelo = ?, equipo_serie = ?"
+            + " WHERE equipo_id = ?;";
 
     public static void actualizar(Equipo a) throws ClassNotFoundException,
             IOException, SQLException {
@@ -89,7 +89,7 @@ public class EquipoDao {
             c = DB.getInstance().getConnection();
             ptsmt = c.prepareStatement(SQL_EQUIPOS_UPDATE);
              ptsmt.setString(1, a.getModelo());
-            ptsmt.setString(2, a.getSerial());
+            ptsmt.setString(2, a.getSerie());
             ptsmt.setInt(3, Integer.parseInt(a.getId()));
             ptsmt.execute();
         } finally {
@@ -101,7 +101,7 @@ public class EquipoDao {
         }
     }
     private final static String SQL_EQUIPOS_DELETE = "DELETE FROM equipos "
-            + " WHERE eq_id = ?;";
+            + " WHERE equipo_id = ?;";
 
     public static void borrar(Equipo a) throws ClassNotFoundException,
             IOException, SQLException {

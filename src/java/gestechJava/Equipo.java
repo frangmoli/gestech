@@ -4,7 +4,7 @@ public class Equipo {
 
     private String id;
     private String modelo;
-    private String serial;
+    private String serie;
 
 
     public String getId() {
@@ -22,11 +22,11 @@ public class Equipo {
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-    public String getSerial() {
-        return serial;
+    public String getSerie() {
+        return serie;
     }
 
-    public void setSerial(String serial) {
-        this.serial = serial;
+    public void setSerie(String serie) {
+        this.serie = serie;
     }
 }

@@ -98,8 +98,10 @@ PERSONA.consultar = function(){
 PERSONA.inicializar = function(){
    var elemInsertar = document.querySelector('#btnInsertar');    
    elemInsertar.setAttribute('onclick',"PERSONA.insertar();");
-   var elemActualizar = document.querySelector('#btnActualizar');    
+   var elemActualizar = document.querySelector('#btnActualizar');
+   
    elemActualizar.setAttribute('onclick',"PERSONA.actualizar();");
+   //elemActualizar.setAttribute('onclick',"PERSONA.consultar();");
    var elemEliminar = document.querySelector('#btnEliminar');    
    elemEliminar.setAttribute('onclick',"PERSONA.eliminar();");
    var elemConsultar = document.querySelector('#btnConsultar');    

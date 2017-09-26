@@ -1,4 +1,4 @@
-package ejemploRest;
+package gestechJava;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;

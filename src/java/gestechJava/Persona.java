@@ -1,4 +1,4 @@
-package ejemploRest;
+package gestechJava;
 
 public class Persona {
 

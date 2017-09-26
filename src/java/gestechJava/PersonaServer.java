@@ -1,4 +1,4 @@
-package ejemploRest;
+package gestechJava;
 
 import com.google.gson.Gson;
 import java.io.IOException;

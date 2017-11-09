@@ -16,7 +16,7 @@ public class Conexion {
     private String password = "";
     private String hostname = "localhost";
     private String port = "3306";
-    private String database = "login";
+    private String database = "dbrest";
     private String classname = "com.mysql.jdbc.Driver";
     private String url = "jdbc:mysql://"+hostname+":"+port+"/"+database;
     private Connection con;

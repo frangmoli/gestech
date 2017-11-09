@@ -22,7 +22,7 @@ public class ModeloUsuario extends Conexion {
         boolean flag = false;
         PreparedStatement pst = null;
                     try{
-            String sql = "insert into usuarios (nombre, apellido, dni, telefono, usuario, password, correo, fechaAlta) values (?,?,?,?,?,?,?,?)";
+            String sql = "insert into usuarios (nombre, apellido, alias, password) values (?,?,?,?)";
             pst = getConnection ().prepareStatement(sql);
             pst.setString(1, u.getNombre());
             pst.setString(2, u.getApellido());

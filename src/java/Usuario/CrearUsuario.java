@@ -33,13 +33,11 @@ public class CrearUsuario extends HttpServlet {
 
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
-        String dni = request.getParameter("dni");
-        String telefono = request.getParameter("telefono");        
-        String usuario = request.getParameter("usuario");
+        String alias = request.getParameter("alias");
         String password = request.getParameter("password");
-        String email = request.getParameter("email");
+
      
-        Usuario user = new Usuario(nombre, apellido, dni, telefono, usuario, password, email);
+        Usuario user = new Usuario(nombre, apellido, alias, password);
         ControladorUsuario cu = new ControladorUsuario();
         
         if(cu.crear(user)){

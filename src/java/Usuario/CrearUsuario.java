@@ -31,10 +31,10 @@ public class CrearUsuario extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        String nombre = request.getParameter("nombre");
-        String apellido = request.getParameter("apellido");
-        String alias = request.getParameter("alias");
-        String password = request.getParameter("password");
+        String nombre = request.getParameter("usr_nombre");
+        String apellido = request.getParameter("usr_apellido");
+        String alias = request.getParameter("usr_alias");
+        String password = request.getParameter("usr_password");
 
      
         Usuario user = new Usuario(nombre, apellido, alias, password);

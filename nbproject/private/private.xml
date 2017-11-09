@@ -3,18 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/java_crud/src/java/Login/Conexion.java</file>
-            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/java_crud/src/java/Usuario/Usuario.java</file>
-            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/java_crud/src/java/Login/Encriptar.java</file>
-            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/java_crud/src/java/Equipos/EquipoDao.java</file>
-            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/java_crud/src/java/Usuario/CrearUsuario.java</file>
-            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/java_crud/src/java/Login/CerrarSession.java</file>
-            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/java_crud/src/java/Usuario/ModeloUsuario.java</file>
-            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/java_crud/src/java/Clientes/PersonaDao.java</file>
-            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/java_crud/src/java/Equipos/EquipoServer.java</file>
-            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/java_crud/src/java/Login/IniciarSesion.java</file>
-            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/java_crud/src/java/gestechJava/DB.java</file>
-            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/java_crud/src/java/Usuario/ControladorUsuario.java</file>
+            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/Gestech_1/src/java/Login/Encriptar.java</file>
+            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/Gestech_1/web/ParteWeb/clientes.html</file>
+            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/Gestech_1/src/java/Usuario/ControladorUsuario.java</file>
+            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/Gestech_1/src/java/Usuario/CrearUsuario.java</file>
+            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/Gestech_1/web/ParteWeb/equipos.html</file>
+            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/Gestech_1/src/java/Login/Conexion.java</file>
+            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/Gestech_1/src/java/Usuario/ModeloUsuario.java</file>
+            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/Gestech_1/src/java/Usuario/Usuario.java</file>
+            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/Gestech_1/src/java/sql/dbrest.sql</file>
+            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/Gestech_1/.git/config</file>
+            <file>file:/C:/Users/Fran%20y%20Angie/Desktop/crud/javaweb/java_crud/Gestech_1/web/ParteWeb/js/persona02.js</file>
         </group>
     </open-files>
 </project-private>

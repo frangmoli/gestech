@@ -22,7 +22,7 @@ public class ModeloUsuario extends Conexion {
         boolean flag = false;
         PreparedStatement pst = null;
                     try{
-            String sql = "insert into usuarios (nombre, apellido, alias, password) values (?,?,?,?)";
+            String sql = "insert into usuarios (usr_nombre, usr_apellido, usr_alias, usr_password) values (?,?,?,?)";
             pst = getConnection ().prepareStatement(sql);
             pst.setString(1, u.getNombre());
             pst.setString(2, u.getApellido());
@@ -56,7 +56,7 @@ public class ModeloUsuario extends Conexion {
           ResultSet rs = null;
           
           try{
-              String sql = "select tipoUsuario from usuarios where usuario = ? and password = ?";
+              String sql = "select tipoUsuario from usuarios where usr_alias = ? and usr_password = ?";
               pst = getConnection().prepareStatement(sql);
               pst.setString(1, u.getAlias());              
               pst.setString(2, Encriptar.sha1(u.getPassword())); 

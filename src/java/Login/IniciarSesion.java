@@ -31,8 +31,8 @@ public class IniciarSesion extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        String usuario = request.getParameter("usuario");
-        String password = request.getParameter("password");  
+        String usuario = request.getParameter("usr_alias");
+        String password = request.getParameter("usr_password");  
         
         Usuario user = new Usuario(usuario, password);
         ControladorUsuario cu = new ControladorUsuario();

@@ -49,7 +49,7 @@
                 <input class="form-control" type="email" name="persona_email" id="persona_email"  placeholder="Email" maxlength="200" />
                 <input class="form-control" type="text" name="persona_direccion" id="persona_direccion" placeholder="Direccion" maxlength="200" />
               <br> 
-                <input class="btn btn-primary" id="btnInsertar" value="Insertar" />
+                <input class="btn btn-primary" id="btnInsertar" value="Insertar"  />
                 <input class="btn btn-danger" id="btnEliminar" value="Eliminar" style="visibility: hidden" />
                 <input class="btn btn-warning" id="btnActualizar" value="Actualizar" style="visibility: hidden" />
                 <input class="btn btn-info" id="btnConsultar" value="Consultar listado clientes"/>
@@ -85,8 +85,8 @@
                   <td><input class="form-control" type='text' value='${persona.telefono}' id='persona_telefono_${persona.id}' /></td>
                   <td><input class="form-control" type='email' value='${persona.email}' id='persona_email_${persona.id}' /></td>
                   <td><input class="form-control" type='text' value='${persona.direccion}' id='persona_direccion_${persona.id}' /></td>
-                  <td><input class='btn btn-warning' value='Modificar datos  ${persona.id}' onclick='PERSONA.actualizar(${persona.id});' />
-                  <input class='btn btn-danger' value='Eliminar cliente ${persona.id}' onclick='PERSONA.eliminar(${persona.id});'/></td>
+                  <td><input class='btn btn-warning' value='Modificar datos  ${persona.id}' onclick='PERSONA.actualizar(${persona.id});PERSONA.consultar();' />
+                  <input class='btn btn-danger' value='Eliminar cliente ${persona.id}' onclick='PERSONA.eliminar(${persona.id});PERSONA.consultar();'/></td>
               </tr>
     `
         ).join('')

@@ -68,6 +68,7 @@ PERSONA.eliminar = function(paramId){
     //xhr.send( personaStringJSON );
     xhr.send(  );
 };
+
 PERSONA.consultar = function(){
     var xhr = new XMLHttpRequest();
     // Metodo CONSULTAR, Accion PersonaServer
@@ -97,13 +98,13 @@ PERSONA.consultar = function(){
 
 PERSONA.inicializar = function(){
    var elemInsertar = document.querySelector('#btnInsertar');    
-   elemInsertar.setAttribute('onclick',"PERSONA.insertar();");
+   elemInsertar.setAttribute('onclick',"PERSONA.insertar();PERSONA.consultar();");
    var elemActualizar = document.querySelector('#btnActualizar');
    
-   elemActualizar.setAttribute('onclick',"PERSONA.actualizar();");
+   elemActualizar.setAttribute('onclick',"PERSONA.actualizar();PERSONA.consultar();");
    //elemActualizar.setAttribute('onclick',"PERSONA.consultar();");
    var elemEliminar = document.querySelector('#btnEliminar');    
-   elemEliminar.setAttribute('onclick',"PERSONA.eliminar();");
+   elemEliminar.setAttribute('onclick',"PERSONA.eliminar();PERSONA.consultar();");
    var elemConsultar = document.querySelector('#btnConsultar');    
    elemConsultar.setAttribute('onclick',"PERSONA.consultar();");
 //   var elemShutdown = document.querySelector('#btnShutdown');    

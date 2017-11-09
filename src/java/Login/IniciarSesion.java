@@ -42,14 +42,14 @@ public class IniciarSesion extends HttpServlet {
                    
                     sesion.setAttribute("user", usuario);
                     sesion.setAttribute("nivel", "1");
-                    response.sendRedirect("bienvenido.jsp");
+                    response.sendRedirect("index.html");
                 break;
             
                 case 2:
                     
                     sesion.setAttribute("user", usuario);
                     sesion.setAttribute("nivel", "2");
-                    response.sendRedirect("bienvenido.jsp");
+                    response.sendRedirect("index.html");
                 break;        
                 
                 default:

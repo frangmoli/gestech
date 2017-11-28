@@ -31,7 +31,7 @@ public class CerrarSession extends HttpServlet {
 
         HttpSession session = request.getSession(true);
         session.removeValue("user");
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("ingresar.html");
         
     }
 

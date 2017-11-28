@@ -42,18 +42,22 @@ public class IniciarSesion extends HttpServlet {
                    
                     sesion.setAttribute("user", usuario);
                     sesion.setAttribute("nivel", "1");
-                    response.sendRedirect("index.html");
+//                    response.sendRedirect("index.html");
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
                 break;
             
                 case 2:
                     
                     sesion.setAttribute("user", usuario);
                     sesion.setAttribute("nivel", "2");
-                    response.sendRedirect("index.html");
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
                 break;        
                 
                 default:
-                    response.getWriter().print("credenciales incorrectas"); 
+                    response.getWriter().print("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">"
+                            + "<div style=\"max-width: 380px;padding: 15px 35px 45px;\"class=\"container-fluid\"><div class=\"alert alert-danger\">\n" +
+"  <strong>Usuario o password incorrectos!</strong><a href=\"ingresar.jsp\" class=\"alert-link\"> Volver</a>.\n" +
+"</div></div>"); 
                 
                     break;  
         

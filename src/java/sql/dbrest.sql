@@ -1,151 +1,133 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.0.9
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 12, 2017 at 02:36 AM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 7.1.7
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 17-11-2017 a las 00:42:12
+-- Versión del servidor: 5.5.34
+-- Versión de PHP: 5.4.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Database: `dbrest`
+-- Base de datos: `dbrest`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `equipos`
+-- Estructura de tabla para la tabla `equipos`
 --
 
-CREATE TABLE `equipos` (
-  `equipo_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `equipos` (
+  `equipo_id` int(11) NOT NULL AUTO_INCREMENT,
+  `equipo_cliente` int(11) NOT NULL,
   `equipo_modelo` varchar(50) NOT NULL,
-  `equipo_serie` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `equipo_serie` varchar(50) NOT NULL,
+  `equipo_diag` varchar(250) NOT NULL,
+  `equipo_fechain` varchar(30) NOT NULL,
+  `equipo_presup` varchar(50) NOT NULL,
+  `equipo_fechaout` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`equipo_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data for table `equipos`
+-- Volcado de datos para la tabla `equipos`
 --
 
-INSERT INTO `equipos` (`equipo_id`, `equipo_modelo`, `equipo_serie`) VALUES
-(1, 'pepito', '123');
+INSERT INTO `equipos` (`equipo_id`, `equipo_cliente`, `equipo_modelo`, `equipo_serie`, `equipo_diag`, `equipo_fechain`, `equipo_presup`, `equipo_fechaout`) VALUES
+(1, 0, 'pepito', '123', '0', 'undefined', '', '2017-11-21'),
+(2, 77, '77', '77', '77', '2017-11-17', '', NULL),
+(3, 1, '123', '123', '123', '2017-11-10', '123', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personas`
+-- Estructura de tabla para la tabla `personas`
 --
 
-CREATE TABLE `personas` (
-  `per_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `personas` (
+  `per_id` int(11) NOT NULL AUTO_INCREMENT,
   `per_nombre` varchar(250) NOT NULL,
   `per_apellido` varchar(250) NOT NULL,
   `per_dni` varchar(50) NOT NULL,
   `per_telefono` varchar(200) NOT NULL,
   `per_email` varchar(250) NOT NULL,
-  `per_direccion` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `per_direccion` varchar(250) NOT NULL,
+  PRIMARY KEY (`per_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
--- Dumping data for table `personas`
+-- Volcado de datos para la tabla `personas`
 --
 
 INSERT INTO `personas` (`per_id`, `per_nombre`, `per_apellido`, `per_dni`, `per_telefono`, `per_email`, `per_direccion`) VALUES
 (1, 'julieta', '', '', '', 'juli@gmail', ''),
-(2, 'marcelo', '', '', '', 'marce@gmail', ''),
-(3, 'dieguito', '', '', '', 'dieguito@gmail', ''),
-(4, 'pedro', '', '', '', 'peter@gmail', '4535353 asdfasdf'),
-(15, 'Pepe', 'Pompin', '3333333', '333333333', 'dasd@de.com', 'asdjklasd'),
-(16, 'gh', 'fghfg', 'fghfgh', 'fghfgh', 'fghf@', 'sdfadsa');
+(3, 'dieguito', '123123', '', '', 'dieguito@gmail', ''),
+(16, 'gh', 'fghfg', 'fghfgh', 'fghfgh', 'fghf@', 'sdfadsa'),
+(18, 'asdasda', 'asdasd', '234234', '234234', 'asdas@34234.com', 'sadasd 12312');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tipo_usuario`
+-- Estructura de tabla para la tabla `tipo_usuario`
 --
 
-CREATE TABLE `tipo_usuario` (
-  `id` int(11) NOT NULL,
-  `tipo` varchar(50) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `tipo_usuario` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(50) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `tipo_usuario`
+--
+
+INSERT INTO `tipo_usuario` (`id`, `tipo`) VALUES
+(1, 'Admin'),
+(2, 'User');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE `usuarios` (
-  `usr_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `usr_id` int(11) NOT NULL AUTO_INCREMENT,
   `usr_nombre` varchar(50) NOT NULL,
   `usr_apellido` varchar(50) NOT NULL,
   `usr_alias` varchar(50) NOT NULL,
-  `usr_password` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `usr_password` varchar(150) NOT NULL,
+  `usr_tipo` int(11) NOT NULL,
+  PRIMARY KEY (`usr_id`),
+  KEY `tipo_usuario_usuarios_relacion_fk` (`usr_tipo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Indexes for dumped tables
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`usr_id`, `usr_nombre`, `usr_apellido`, `usr_alias`, `usr_password`, `usr_tipo`) VALUES
+(1, 'pepe', 'perez', 'pepe', 'perez', 1),
+(2, 'pepe', 'perez', 'pepe', 'perez', 2);
+
+--
+-- Restricciones para tablas volcadas
 --
 
 --
--- Indexes for table `equipos`
---
-ALTER TABLE `equipos`
-  ADD PRIMARY KEY (`equipo_id`);
-
---
--- Indexes for table `personas`
---
-ALTER TABLE `personas`
-  ADD PRIMARY KEY (`per_id`);
-
---
--- Indexes for table `tipo_usuario`
---
-ALTER TABLE `tipo_usuario`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `usuarios`
+-- Filtros para la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`usr_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `equipos`
---
-ALTER TABLE `equipos`
-  MODIFY `equipo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `personas`
---
-ALTER TABLE `personas`
-  MODIFY `per_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
---
--- AUTO_INCREMENT for table `tipo_usuario`
---
-ALTER TABLE `tipo_usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `usr_id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+  ADD CONSTRAINT `tipo_usuario_usuarios_relacion_fk` FOREIGN KEY (`usr_tipo`) REFERENCES `tipo_usuario` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

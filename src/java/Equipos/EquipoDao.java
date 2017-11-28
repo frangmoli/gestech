@@ -36,8 +36,13 @@ public class EquipoDao {
                 try {
                     a = new Equipo();
                     a.setId(rs.getString("equipo_id"));
+                    a.setCliente(rs.getString("equipo_cliente"));
                     a.setModelo(rs.getString("equipo_modelo"));
                     a.setSerie(rs.getString("equipo_serie"));
+                    a.setDiag(rs.getString("equipo_diag"));
+                    a.setFin(rs.getString("equipo_fechain"));
+                    a.setPresup(rs.getString("equipo_presup"));
+                    a.setFout(rs.getString("equipo_fechaout"));
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
@@ -56,8 +61,10 @@ public class EquipoDao {
         }
         return lista;
     }
-    private final static String SQL_EQUIPOS_INSERT = "INSERT INTO equipos (equipo_modelo,"
-            + "equipo_serie)values(?,?);";
+    private final static String SQL_EQUIPOS_INSERT = "INSERT INTO equipos (equipo_cliente,equipo_modelo,"
+            + "equipo_serie,equipo_diag,"
+            + "equipo_fechain,equipo_presup)"
+            + "values(?,?,?,?,?,?);";
 
     public static void insertar(Equipo a)
             throws ClassNotFoundException,
@@ -67,8 +74,12 @@ public class EquipoDao {
         try {
             c = DB.getInstance().getConnection();
             ptsmt = c.prepareStatement(SQL_EQUIPOS_INSERT);
-            ptsmt.setString(1, a.getModelo());
-            ptsmt.setString(2, a.getSerie());
+            ptsmt.setString(1, a.getCliente());
+            ptsmt.setString(2, a.getModelo());
+            ptsmt.setString(3, a.getSerie());
+            ptsmt.setString(4, a.getDiag());
+            ptsmt.setString(5, a.getFin());
+            ptsmt.setString(6, a.getPresup());
             ptsmt.execute();
         } finally {
             try {
@@ -78,9 +89,10 @@ public class EquipoDao {
             }
         }
     }
-    private final static String SQL_EQUIPOS_UPDATE = "UPDATE equipos "
-            + " set equipo_modelo = ?, equipo_serie = ?"
-            + " WHERE equipo_id = ?;";
+    private final static String SQL_EQUIPOS_UPDATE = "UPDATE equipos set equipo_cliente = ?, equipo_modelo = ?, "
+            + "equipo_serie = ?, equipo_diag = ?, "
+            + "equipo_fechain = ?, equipo_presup = ?, "
+            + "equipo_fechaout = ? WHERE equipo_id = ?;";
 
     public static void actualizar(Equipo a) throws ClassNotFoundException,
             IOException, SQLException {
@@ -89,9 +101,14 @@ public class EquipoDao {
         try {
             c = DB.getInstance().getConnection();
             ptsmt = c.prepareStatement(SQL_EQUIPOS_UPDATE);
-             ptsmt.setString(1, a.getModelo());
-            ptsmt.setString(2, a.getSerie());
-            ptsmt.setInt(3, Integer.parseInt(a.getId()));
+             ptsmt.setString(1, a.getCliente());
+            ptsmt.setString(2, a.getModelo());
+            ptsmt.setString(3, a.getSerie());
+            ptsmt.setString(4, a.getDiag());
+            ptsmt.setString(5, a.getFin());
+            ptsmt.setString(6, a.getPresup());
+            ptsmt.setString(7, a.getFout());
+            ptsmt.setInt(8, Integer.parseInt(a.getId()));
             ptsmt.execute();
         } finally {
             try {
